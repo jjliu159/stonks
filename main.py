@@ -1,6 +1,7 @@
 import wsj_headlines
 import cnbc_headlines
 import display_news
+import textbox
 
 stop = False
 
@@ -15,6 +16,10 @@ while stop == False:
 wsj_news = wsj_headlines.grab(all_ticker)
 cnbc_news = cnbc_headlines.grab(all_ticker)
 
-display_news.display(wsj_news)
-display_news.display(cnbc_news)
+all_news,company_name = [], []
+all_news.append(wsj_news)
+all_news.append(cnbc_news)
+company_name.append("Wall Street Journal")
+company_name.append("CNBC")
 
+textbox.text(all_news,company_name)
